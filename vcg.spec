@@ -11,8 +11,6 @@ Patch0:		%{name}-LINUX.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 The VCG tool reads a textual and readable specification of a graph and
