@@ -4,12 +4,15 @@ Name:		vcg
 Version:	1.30
 Release:	1
 License:	GPL
-Group:		Applications/Graphics
+Group:		X11/Applications/Graphics
 URL:		http://www.cs.uni-sb.de/RW/users/sander/html/gsvcg1.html
 Source0:	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/%{name}.tgz
 Patch0:		%{name}-LINUX.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
 The VCG tool reads a textual and readable specification of a graph and
@@ -21,28 +24,34 @@ the language of the edge tool, but contains many extensions. The VCG
 tool allows folding of dynamically or statically specified regions of
 the graph. It uses colors and runs on X11.
 
-
 %description -l pl
-Narzêdzie VCG odrzytuje tekstowa i czyteln± specyfikacjê grafi i
+Narzêdzie VCG odczytuje tekstow± i czyteln± specyfikacjê grafu i
 wy¶wietla go. Je¿eli nie wszystkie pozycje li¶ci s± ustalone,
 narzêdzie tworzy graf korzystaj±c z kilku heurestyk redukuj±c liczbê
 przeciêæ, minimalizuj±c wielko¶æ krawêdzi, centruj±c li¶cie.
 Specyfikacja jêzyka wykorzystywanego przez VCG jest niemal
-kompatybilna z GRL, jêzykiem narzêdzi krawdêdzi, ale zawiera kilka
+kompatybilna z GRL, jêzykiem narzêdzi krawêdzi, ale zawiera kilka
 rozszerzeñ. VCG pozwala na trzymanie dynamicznie i statycznie
-ustalonych regionów grafu. Wykorzystuje kolorki i dzia³a pod X11.
+ustalonych regionów grafu. U¿ywa kolorów i dzia³a pod X11.
 
 %prep
 %setup -q -n %{name}.%{version}
 %patch0 -p1 -z .pix
 
 %build
-%{__make} xvcg_gcc_noxmkmf xvcg CFLAGS="-c %{rpmcflags}" BINDIR=%{_bindir} MANDIR=%{_mandir}/man1
+%{__make} xvcg_gcc_noxmkmf xvcg \
+	CFLAGS="-c %{rpmcflags}" \
+	BINDIR=%{_bindir} \
+	MANDIR=%{_mandir}/man1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
-%{__make} SED=sed BINDIR=$RPM_BUILD_ROOT/%{_bindir} MANDIR=$RPM_BUILD_ROOT/%{_mandir}/man1 install
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
+
+%{__make} install \
+	SED=sed \
+	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
+	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
 cp -f demo/demo.csh expl
 
