@@ -41,7 +41,8 @@ ustalonych regionów grafu. U¿ywa kolorów i dzia³a pod X11.
 %{__make} xvcg_gcc_noxmkmf xvcg \
 	CFLAGS="-c %{rpmcflags}" \
 	BINDIR=%{_bindir} \
-	MANDIR=%{_mandir}/man1
+	MANDIR=%{_mandir}/man1 \
+	LIBPATH="-L%{_prefix}/X11R6/%{_lib}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
