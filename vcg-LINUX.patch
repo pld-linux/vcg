@@ -1,0 +1,88 @@
+--- vcg.1.30/demo/demo.csh.tpl.pix	Wed Feb  8 06:27:35 1995
++++ vcg.1.30/demo/demo.csh.tpl	Thu Dec 28 17:33:11 2000
+@@ -5,7 +5,7 @@
+ #
+ # ====================== Change area ============================
+ 
+-alias OUTP  /bin/echo
++alias OUTP  echo
+ 
+ # ================== End of Change area =========================
+ 
+@@ -17,7 +17,7 @@
+ 	set mvcgn = "`echo $BINDIR`VCGNAME"
+ endif
+ if (! -x $mvcgn) then
+-	set mvcgn = "BINPATHNAMEVCGNAME"
++	set mvcgn = "/usr/bin/xcvg"
+ endif
+ if (! -x $mvcgn) then
+ 	set mvcgn = "VCGNAME"
+@@ -37,7 +37,7 @@
+   OUTP "monochromatic version even on a color screen."
+   OUTP "1 : X11 with colors      2 : Sunview with colors  "
+   OUTP "3 : X11 monochromatic    4 : Sunview monochromatic"
+-  set wsys = $<
++  set wsys = 1
+   switch ($wsys)
+   case 1:
+ 	alias MYVCG $mvcgn -geometry 700x700+20-20
+--- vcg.1.30/man/Makefile.pix	Wed Feb  8 06:33:26 1995
++++ vcg.1.30/man/Makefile	Thu Dec 28 17:32:39 2000
+@@ -53,7 +53,7 @@
+ 
+ # For manual pages:
+ # Assume that you want to install a file called dummy.
+-INSTALLMAN = /bin/install -m 644 dummy $(MANDIR)/dummy
++INSTALLMAN = install -m 644 dummy $(MANDIR)/dummy
+ 
+ # RCS check out shellscript
+ CHECKOUT = co
+--- vcg.1.30/preconf/X11gccLinux/tMakefile.pix	Fri Feb 10 13:29:11 1995
++++ vcg.1.30/preconf/X11gccLinux/tMakefile	Thu Dec 28 17:32:39 2000
+@@ -107,7 +107,7 @@
+ # or libX11.so.<version_number>, or libXext.a, etc.
+ # For instance, if you find /usr/local/X11/lib/libX11.a
+ # then please use
+-# LIBPATH = -L/usr/local/X11/lib/
++LIBPATH = -L/usr/X11R6/lib/
+ # LIBPATH = -L/RW/esprit/X11R5/lib/
+ # LIBPATH = -L/usr/local/lib/
+ 
+@@ -141,17 +141,17 @@
+ # I prefer that binaries are stripped.
+ # For directories:
+ # INSTALLDIR = /bin/install -d -m 755
+-INSTALLDIR = /bin/install -d -m 755
++INSTALLDIR = install -d -m 755
+ 
+ # For binary files:
+ # Assume that you want to install s file called dummy.
+ # INSTALL = /bin/install -s -m 755 dummy $(BINDIR)/dummy
+-INSTALL = /bin/install -s -m 755 dummy $(BINDIR)/dummy
++INSTALL = install -s -m 755 dummy $(BINDIR)/dummy
+ 
+ # For manual pages:
+ # Assume that you want to install s file called dummy.
+ # INSTALLMAN = /bin/install -m 644 dummy $(MANDIR)/dummy
+-INSTALLMAN = /bin/install -m 644 dummy $(MANDIR)/dummy
++INSTALLMAN = install -m 644 dummy $(MANDIR)/dummy
+ 
+ # To make the documentation
+ LATEX = latex
+--- vcg.1.30/src/Makefile.pix	Wed Feb  8 06:35:38 1995
++++ vcg.1.30/src/Makefile	Thu Dec 28 17:32:39 2000
+@@ -117,11 +117,11 @@
+ # Install software. You can use /bin/cp instead of /bin/install.
+ # I prefer that binaries are stripped.
+ # For directories:
+-INSTALLDIR = /bin/install -d -m 755
++INSTALLDIR = install -d -m 755
+ 
+ # For binary files:
+ # Assume that you want to install s file called dummy.
+-INSTALL = /bin/install -s -m 755 dummy $(BINDIR)/dummy
++INSTALL = install -s -m 755 dummy $(BINDIR)/dummy
+ 
+ # RCS check out shellscript
+ CHECKOUT = co
