@@ -7,6 +7,7 @@ License:	GPL
 Group:		X11/Applications/Graphics
 URL:		http://www.cs.uni-sb.de/RW/users/sander/html/gsvcg1.html
 Source0:	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/%{name}.tgz
+# Source0-md5:	283faf1a2cc163d5c0e4977b8ec1f658
 Patch0:		%{name}-LINUX.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
