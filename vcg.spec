@@ -58,6 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING README expl
+%doc README expl
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man?/*
