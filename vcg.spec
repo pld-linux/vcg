@@ -26,7 +26,7 @@ the graph. It uses colors and runs on X11.
 %description -l pl
 Narzêdzie VCG odczytuje tekstow± i czyteln± specyfikacjê grafu i
 wy¶wietla go. Je¿eli nie wszystkie pozycje li¶ci s± ustalone,
-narzêdzie tworzy graf korzystaj±c z kilku heurestyk redukuj±c liczbê
+narzêdzie tworzy graf korzystaj±c z kilku heurystyk redukuj±c liczbê
 przeciêæ, minimalizuj±c wielko¶æ krawêdzi, centruj±c li¶cie.
 Specyfikacja jêzyka wykorzystywanego przez VCG jest niemal
 kompatybilna z GRL, jêzykiem narzêdzi krawêdzi, ale zawiera kilka
