@@ -12,7 +12,6 @@ URL:		http://www.cs.uni-sb.de/RW/users/sander/html/gsvcg1.html
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 The VCG tool reads a textual and readable specification of a graph and
 visualizes the graph. If not all positions of nodes are fixed, the
