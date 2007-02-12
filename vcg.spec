@@ -1,5 +1,5 @@
 Summary:	The VCG visualization tool for compiler graphs
-Summary(pl):	Narzêdzie do wizualizacji grafów kompilacji
+Summary(pl.UTF-8):   NarzÄ™dzie do wizualizacji grafÃ³w kompilacji
 Name:		vcg
 Version:	1.30
 Release:	1
@@ -22,15 +22,15 @@ the language of the edge tool, but contains many extensions. The VCG
 tool allows folding of dynamically or statically specified regions of
 the graph. It uses colors and runs on X11.
 
-%description -l pl
-Narzêdzie VCG odczytuje tekstow± i czyteln± specyfikacjê grafu i
-wy¶wietla go. Je¿eli nie wszystkie pozycje li¶ci s± ustalone,
-narzêdzie tworzy graf korzystaj±c z kilku heurystyk redukuj±c liczbê
-przeciêæ, minimalizuj±c wielko¶æ krawêdzi, centruj±c li¶cie.
-Specyfikacja jêzyka wykorzystywanego przez VCG jest niemal
-kompatybilna z GRL, jêzykiem narzêdzi krawêdzi, ale zawiera kilka
-rozszerzeñ. VCG pozwala na trzymanie dynamicznie i statycznie
-ustalonych regionów grafu. U¿ywa kolorów i dzia³a pod X11.
+%description -l pl.UTF-8
+NarzÄ™dzie VCG odczytuje tekstowÄ… i czytelnÄ… specyfikacjÄ™ grafu i
+wyÅ›wietla go. JeÅ¼eli nie wszystkie pozycje liÅ›ci sÄ… ustalone,
+narzÄ™dzie tworzy graf korzystajÄ…c z kilku heurystyk redukujÄ…c liczbÄ™
+przeciÄ™Ä‡, minimalizujÄ…c wielkoÅ›Ä‡ krawÄ™dzi, centrujÄ…c liÅ›cie.
+Specyfikacja jÄ™zyka wykorzystywanego przez VCG jest niemal
+kompatybilna z GRL, jÄ™zykiem narzÄ™dzi krawÄ™dzi, ale zawiera kilka
+rozszerzeÅ„. VCG pozwala na trzymanie dynamicznie i statycznie
+ustalonych regionÃ³w grafu. UÅ¼ywa kolorÃ³w i dziaÅ‚a pod X11.
 
 %prep
 %setup -q -n %{name}.%{version}
