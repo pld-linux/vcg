@@ -1,5 +1,5 @@
 Summary:	The VCG visualization tool for compiler graphs
-Summary(pl.UTF-8):   Narzędzie do wizualizacji grafów kompilacji
+Summary(pl.UTF-8):	Narzędzie do wizualizacji grafów kompilacji
 Name:		vcg
 Version:	1.30
 Release:	1
